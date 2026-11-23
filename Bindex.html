@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bouture : appels d'offres espaces verts</title>
+<meta name="description" content="Les appels d'offres espaces verts de votre secteur chaque semaine, et vos mémoires techniques rédigés pour vous.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f7f6f1;--surface:#ffffff;--ink:#1d2a22;--muted:#5b6b60;--line:#e2e4dc;--green:#2f6b3f;--green-ink:#ffffff;--soft:#e6efe4;}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#121713;--surface:#1a211c;--ink:#e9efe8;--muted:#a3b2a6;--line:#2c362f;--green:#6fbf83;--green-ink:#0f1a12;--soft:#1f2c22;}}
+:root[data-theme="dark"]{--bg:#121713;--surface:#1a211c;--ink:#e9efe8;--muted:#a3b2a6;--line:#2c362f;--green:#6fbf83;--green-ink:#0f1a12;--soft:#1f2c22;}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 Inter,system-ui,sans-serif}
+.wrap{max-width:1040px;margin:0 auto;padding:0 16px}
+header{display:flex;justify-content:space-between;align-items:center;padding:20px 0}
+.logo{font-family:Fraunces,serif;font-size:22px;font-weight:600;color:var(--green)}
+.btn{display:inline-block;background:var(--green);color:var(--green-ink);padding:12px 20px;border-radius:10px;text-decoration:none;font-weight:600;border:0;cursor:pointer;font-size:16px}
+.btn.ghost{background:transparent;color:var(--green);border:1.5px solid var(--green)}
+h1,h2{font-family:Fraunces,serif;line-height:1.15;margin:0 0 16px}
+h1{font-size:clamp(32px,6vw,54px);max-width:16ch}
+h2{font-size:clamp(26px,4vw,36px)}
+.hero{padding:48px 0 64px}
+.lead{font-size:19px;color:var(--muted);max-width:56ch;margin:0 0 28px}
+.row{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.note{font-size:14px;color:var(--muted)}
+section{padding:56px 0;border-top:1px solid var(--line)}
+.grid{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:24px}
+.card h3{margin:0 0 8px;font-size:18px}
+.card p{margin:0;color:var(--muted)}
+.num{font-family:Fraunces,serif;font-size:40px;color:var(--green);line-height:1}
+.price{font-family:Fraunces,serif;font-size:34px;margin:8px 0}
+.price small{font-family:Inter,sans-serif;font-size:14px;color:var(--muted)}
+.card ul{padding-left:18px;margin:12px 0 20px;color:var(--muted)}
+.featured{border:2px solid var(--green)}
+.tag{display:inline-block;background:var(--soft);color:var(--green);font-size:13px;font-weight:600;padding:4px 10px;border-radius:99px;margin-bottom:8px}
+form{display:flex;gap:8px;flex-wrap:wrap;max-width:520px}
+input{flex:1 1 220px;padding:12px 14px;border-radius:10px;border:1px solid var(--line);background:var(--surface);color:var(--ink);font-size:16px}
+details{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:16px 20px;margin-bottom:10px}
+summary{font-weight:600;cursor:pointer}
+details p{color:var(--muted);margin:10px 0 0}
+footer{padding:32px 0;color:var(--muted);font-size:14px;border-top:1px solid var(--line)}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <div class="logo">Bouture</div>
+  <a class="btn ghost" href="#veille">Veille gratuite</a>
+</header>
+
+<div class="hero">
+  <span class="tag">Pour les entreprises d'espaces verts et de paysage</span>
+  <h1>Gagnez des marchés publics sans y passer vos soirées.</h1>
+  <p class="lead">Chaque semaine, nous vous envoyons les appels d'offres d'espaces verts de votre secteur, avec un avis clair : on y va ou pas. Quand vous décidez d'y aller, nous rédigeons le mémoire technique. Vous relisez, vous fixez vos prix, vous déposez.</p>
+  <div class="row">
+    <a class="btn" href="#veille">Recevoir la veille gratuite</a>
+    <span class="note">Premier dossier à moitié prix.</span>
+  </div>
+</div>
+
+<section>
+  <div class="grid">
+    <div class="card"><div class="num">2 610</div><p>appels d'offres d'espaces verts publiés au BOAMP en 12 mois, soit environ 10 par jour ouvré.</p></div>
+    <div class="card"><div class="num">8 à 15 h</div><p>de travail pour une réponse quand on la rédige seul, le soir ou le week-end.</p></div>
+    <div class="card"><div class="num">48 h</div><p>pour recevoir votre mémoire technique prêt à relire.</p></div>
+  </div>
+</section>
+
+<section>
+  <h2>Comment ça marche</h2>
+  <div class="grid">
+    <div class="card"><h3>1. On repère</h3><p>Nous lisons chaque jour les avis de marché d'espaces verts de vos départements et ne gardons que ceux qui correspondent à votre taille et à vos moyens.</p></div>
+    <div class="card"><h3>2. On analyse</h3><p>Pour chaque marché : les critères de notation, les pièges du cahier des charges, et notre avis sur vos chances.</p></div>
+    <div class="card"><h3>3. On rédige</h3><p>Vous nous transmettez le dossier de consultation. Nous rédigeons le mémoire technique avec vos références, vos moyens et vos méthodes.</p></div>
+    <div class="card"><h3>4. Vous gardez la main</h3><p>Vous relisez, ajustez et fixez vos prix. Rien n'est déposé sans vous.</p></div>
+  </div>
+</section>
+
+<section>
+  <h2>Tarifs</h2>
+  <div class="grid">
+    <div class="card"><h3>Veille</h3><div class="price">49 € <small>HT / mois</small></div><ul><li>Les marchés de vos départements, chaque semaine</li><li>Un avis « on y va ou pas » pour chacun</li><li>Sans engagement</li></ul><a class="btn ghost" href="#veille">Commencer</a></div>
+    <div class="card featured"><span class="tag">Le plus choisi</span><h3>Pro</h3><div class="price">249 € <small>HT / mois</small></div><ul><li>La veille complète</li><li>2 mémoires techniques rédigés par mois</li><li>Votre base de références et de moyens, réutilisée à chaque dossier</li></ul><a class="btn" href="#veille">Commencer</a></div>
+    <div class="card"><h3>Dossier à l'unité</h3><div class="price">390 € <small>HT / dossier</small></div><ul><li>Analyse du dossier de consultation</li><li>Mémoire technique rédigé</li><li>Liste des pièces et contrôle de conformité</li></ul><a class="btn ghost" href="#veille">Commander</a></div>
+  </div>
+</section>
+
+<section>
+  <h2>Questions fréquentes</h2>
+  <details><summary>Qui rédige les mémoires ?</summary><p>Un assistant spécialisé, basé sur l'intelligence artificielle, rédige à partir de vos informations. Chaque dossier est relu une seconde fois avant de vous être envoyé, puis c'est vous qui validez.</p></details>
+  <details><summary>Et le chiffrage ?</summary><p>Vos prix restent votre décision. Nous préparons la structure du bordereau, vous remplissez les montants.</p></details>
+  <details><summary>Mes documents restent-ils confidentiels ?</summary><p>Oui. Vos documents sont hébergés en Europe et ne servent jamais à rédiger la réponse d'une autre entreprise.</p></details>
+  <details><summary>Je n'ai jamais répondu à un marché public.</summary><p>C'est justement le bon moment. Nous vous indiquons les marchés accessibles à votre taille et les pièces administratives à préparer.</p></details>
+</section>
+
+<section id="veille">
+  <h2>Recevez la veille gratuite</h2>
+  <p class="lead">Chaque lundi, les appels d'offres d'espaces verts ouverts dans votre département. Gratuit, désinscription en un clic.</p>
+  <form id="inscription">
+    <input id="dep" type="text" required placeholder="Votre département (ex. 69)" aria-label="Département" style="flex:0 1 260px">
+    <button class="btn" type="submit">Je m'inscris</button>
+  </form>
+  <p class="note">Votre messagerie s'ouvre avec un e-mail prêt à envoyer à contact@boutureao.fr.</p>
+  <script>
+  document.getElementById('inscription').addEventListener('submit',function(e){e.preventDefault();var d=document.getElementById('dep').value.trim();location.href='mailto:contact@boutureao.fr?subject='+encodeURIComponent('Veille gratuite espaces verts - département '+d)+'&body='+encodeURIComponent('Bonjour,\n\nJe souhaite recevoir la veille gratuite des appels d\'offres espaces verts pour le département '+d+'.\n\nEntreprise :\n');});
+  </script>
+</section>
+
+<footer>Bouture, un service d'aide aux réponses aux marchés publics. · <a href="mentions-legales.html" style="color:inherit">Mentions légales et confidentialité</a> · <a href="mailto:contact@boutureao.fr" style="color:inherit">contact@boutureao.fr</a></footer>
+</div>
+</body>
+</html>
