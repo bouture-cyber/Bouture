@@ -1,0 +1,266 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Exemple de dossier Bouture</title>
+<meta name="description" content="Un exemple complet de ce que Bouture livre : analyse du marché, mémoire technique et liste des pièces, pour un vrai appel d'offres d'entretien d'espaces verts.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f7f6f1;--surface:#ffffff;--ink:#1d2a22;--muted:#5b6b60;--line:#e2e4dc;--green:#2f6b3f;--green-ink:#ffffff;--soft:#e6efe4;--warn:#fff3b0;--warn-ink:#5a4a00;--paper:#ffffff;}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#121713;--surface:#1a211c;--ink:#e9efe8;--muted:#a3b2a6;--line:#2c362f;--green:#6fbf83;--green-ink:#0f1a12;--soft:#1f2c22;--warn:#4a4010;--warn-ink:#fff0a0;--paper:#1a211c;}}
+:root[data-theme="dark"]{--bg:#121713;--surface:#1a211c;--ink:#e9efe8;--muted:#a3b2a6;--line:#2c362f;--green:#6fbf83;--green-ink:#0f1a12;--soft:#1f2c22;--warn:#4a4010;--warn-ink:#fff0a0;--paper:#1a211c;}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 Inter,system-ui,sans-serif}
+.wrap{max-width:900px;margin:0 auto;padding:0 16px}
+header{display:flex;justify-content:space-between;align-items:center;padding:20px 0;gap:12px;flex-wrap:wrap}
+.logo{font-family:Fraunces,serif;font-size:22px;font-weight:600;color:var(--green);text-decoration:none}
+.btn{display:inline-block;background:var(--green);color:var(--green-ink);padding:12px 20px;border-radius:10px;text-decoration:none;font-weight:600;border:0;cursor:pointer;font-size:16px}
+.btn.ghost{background:transparent;color:var(--green);border:1.5px solid var(--green)}
+h1,h2,h3{font-family:Fraunces,serif;line-height:1.2}
+h1{font-size:clamp(30px,5.5vw,46px);margin:8px 0 16px}
+h2{font-size:clamp(24px,4vw,32px);margin:0 0 12px}
+h3{font-size:20px;margin:28px 0 10px}
+.lead{font-size:18px;color:var(--muted);max-width:60ch}
+.tag{display:inline-block;background:var(--soft);color:var(--green);font-size:13px;font-weight:600;padding:4px 10px;border-radius:99px}
+.notice{background:var(--soft);border-left:4px solid var(--green);border-radius:8px;padding:14px 18px;margin:20px 0;font-size:15px}
+section{padding:48px 0;border-top:1px solid var(--line)}
+.step{font-size:14px;font-weight:600;color:var(--green);text-transform:uppercase;letter-spacing:.06em;margin-bottom:4px}
+.doc{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:28px clamp(18px,4vw,40px);box-shadow:0 2px 14px rgba(0,0,0,.05)}
+.doc p,.doc li{color:var(--ink)}
+.muted{color:var(--muted)}
+.scroll{overflow-x:auto;margin:12px 0}
+table{border-collapse:collapse;width:100%;font-size:15px;min-width:520px}
+th,td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
+th{background:var(--soft);font-weight:600}
+table.kv{min-width:0}
+table.kv th{width:34%}
+.verdict{display:inline-block;background:var(--green);color:var(--green-ink);font-weight:600;padding:4px 12px;border-radius:99px}
+mark{background:var(--warn);color:var(--warn-ink);padding:1px 4px;border-radius:4px}
+.ref{font-size:13px;color:var(--muted);font-style:italic}
+.cal td,.cal th{text-align:center;padding:6px 4px;font-size:13px}
+.cal td:first-child,.cal th:first-child{text-align:left;padding-left:10px;white-space:nowrap}
+.cal .x{background:var(--green);color:var(--green-ink);font-weight:600}
+.flow{display:grid;gap:10px;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));margin:14px 0}
+.flow div{background:var(--soft);border-radius:10px;padding:12px;font-size:14px}
+.flow b{display:block;color:var(--green)}
+ul.check{list-style:none;padding:0}
+ul.check li{padding:6px 0 6px 30px;position:relative;border-bottom:1px solid var(--line)}
+ul.check li::before{content:"☐";position:absolute;left:4px;color:var(--green);font-size:18px;line-height:1.3}
+ul.check li.ok::before{content:"☑"}
+.grid{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:20px}
+.card h3{margin:0 0 6px;font-size:18px}
+.card p{margin:0;color:var(--muted)}
+.cta{text-align:center}
+.row{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;align-items:center}
+footer{padding:32px 0;color:var(--muted);font-size:14px;border-top:1px solid var(--line)}
+@media print{
+  header .btn,.noprint,.cta,footer a.btn{display:none!important}
+  body{background:#fff;color:#000}
+  .doc{box-shadow:none;border:0;padding:0}
+  section{padding:24px 0;break-inside:auto}
+  h3{break-after:avoid}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <a class="logo" href="index.html">Bouture</a>
+  <div class="row noprint" style="justify-content:flex-end">
+    <button class="btn ghost" onclick="window.print()">Enregistrer en PDF</button>
+    <a class="btn" href="index.html#veille">Veille gratuite</a>
+  </div>
+</header>
+
+<div style="padding:24px 0 40px">
+  <span class="tag">Exemple de livrable</span>
+  <h1>Voici ce que vous recevez quand vous nous confiez un dossier.</h1>
+  <p class="lead">Un vrai appel d'offres, publié au BOAMP en novembre 2026. Une entreprise de paysage imaginaire. Et les trois documents que nous livrons sous 48 h : l'analyse du marché, le mémoire technique et la liste des pièces à déposer.</p>
+  <div class="notice"><strong>À savoir :</strong> le marché (Ville de Tourcoing, avis BOAMP n° 26-108159) est réel. L'entreprise « Paysages Exemple » est <strong>fictive</strong> : ses noms, chiffres et références sont inventés pour l'illustration. Pour un vrai client, chaque chiffre vient de sa fiche entreprise, jamais de notre imagination. Les extraits ci-dessous sont raccourcis : un mémoire complet fait 12 à 20 pages.</div>
+</div>
+
+<!-- ÉTAPE 1 : ANALYSE -->
+<section>
+  <div class="step">Document 1 · livré le jour même</div>
+  <h2>L'analyse du marché : on y va ou pas ?</h2>
+  <p class="muted">Avant de rédiger, nous lisons l'avis et le règlement de consultation et vous disons en une page si le marché vaut l'effort.</p>
+  <div class="doc">
+    <div class="scroll"><table class="kv">
+      <tr><th>Acheteur</th><td>Mairie de Tourcoing (Nord)</td></tr>
+      <tr><th>Objet</th><td>Entretien des espaces verts de la ville</td></tr>
+      <tr><th>Lot visé</th><td>Lot 1, secteur Nord-Ouest (le lot 2 couvre le secteur Sud-Est)</td></tr>
+      <tr><th>Procédure</th><td>Procédure ouverte, marché de services</td></tr>
+      <tr><th>Durée</th><td>4 ans</td></tr>
+      <tr><th>Date limite</th><td><strong>7 décembre 2026 à 12 h</strong> (heure de Paris). Dépôt conseillé la veille.</td></tr>
+      <tr><th>Dépôt</th><td>En ligne, sur la plateforme e-marchespublics de la ville</td></tr>
+    </table></div>
+
+    <h3>Comment vous serez noté</h3>
+    <div class="scroll"><table>
+      <tr><th>Critère</th><th>Poids</th><th>Ce que ça veut dire pour vous</th></tr>
+      <tr><td>Prix (bordereau appliqué au détail estimatif)</td><td>60 %</td><td>C'est vous qui fixez vos prix. Nous vérifions que toutes les lignes sont remplies.</td></tr>
+      <tr><td>Moyens humains et matériels affectés au marché</td><td>30 %</td><td>Le cœur du mémoire. Une équipe nommée et un parc matériel détaillé valent plus que de belles phrases.</td></tr>
+      <tr><td>Note environnementale : bruit, déchets, produits, matériel électrique, schéma de suivi des déchets</td><td>10 %</td><td>L'acheteur demande un <strong>schéma</strong> d'évacuation des déchets. Beaucoup de concurrents l'oublient : c'est un point facile à prendre.</td></tr>
+    </table></div>
+
+    <h3>Points de vigilance</h3>
+    <ol>
+      <li>Le mémoire doit suivre <strong>exactement</strong> les deux sous-critères techniques, dans cet ordre et avec ces mots. Nous avons calqué le plan dessus.</li>
+      <li>Marché de 4 ans : vérifiez la formule de révision des prix au CCAP avant de chiffrer.</li>
+      <li>Vérifiez dans le règlement si une visite des sites est obligatoire : sans certificat de visite, l'offre serait écartée.</li>
+    </ol>
+
+    <p><span class="verdict">Notre avis : on y va</span> &nbsp;Avec 4 agents dont 2 qualifiés et 75 % de son petit matériel sur batterie, Paysages Exemple peut viser une très bonne note technique (40 % de la note au total) et rester compétitif sur le prix.</p>
+  </div>
+</section>
+
+<!-- ÉTAPE 2 : MÉMOIRE -->
+<section>
+  <div class="step">Document 2 · livré sous 48 h</div>
+  <h2>Le mémoire technique (extraits)</h2>
+  <p class="muted">Rédigé avec vos informations, relu une seconde fois comme le ferait l'évaluateur de la mairie, puis envoyé en Word pour que vous puissiez le modifier.</p>
+
+  <div class="doc">
+    <p class="muted" style="margin-top:0">Mairie de Tourcoing · Entretien des espaces verts · Lot 1 Secteur Nord-Ouest<br>Mémoire technique présenté par <strong>Paysages Exemple</strong> (entreprise fictive)</p>
+
+    <h3>Sommaire calqué sur la grille de notation</h3>
+    <div class="scroll"><table>
+      <tr><th>Critère du règlement</th><th>Partie du mémoire</th><th>Page</th></tr>
+      <tr><td rowspan="3">Moyens humains et matériels affectés au marché (30 %)</td><td>1. Notre compréhension du lot Nord-Ouest</td><td>2</td></tr>
+      <tr><td>2. Moyens humains affectés</td><td>3 à 5</td></tr>
+      <tr><td>3. Moyens matériels affectés</td><td>6 à 7</td></tr>
+      <tr><td rowspan="2">Note environnementale (10 %)</td><td>4. Mesures pour limiter l'impact du chantier</td><td>8 à 9</td></tr>
+      <tr><td>5. Schéma de suivi et d'évacuation des déchets, par poste</td><td>10</td></tr>
+    </table></div>
+    <p class="ref">Principe : l'évaluateur note avec une grille. Il doit trouver chaque réponse en cinq secondes.</p>
+
+    <h3>1. Notre compréhension du lot Nord-Ouest</h3>
+    <p>La Ville de Tourcoing confie pour 4 ans l'entretien des espaces verts de son secteur Nord-Ouest : pelouses, massifs, haies, arbustes et abords. Nous retenons trois enjeux pour ce lot :</p>
+    <ul>
+      <li><strong>La continuité sur 4 ans</strong> : une même équipe, connue des services techniques, d'une saison à l'autre.</li>
+      <li><strong>La présence du public</strong> pendant les interventions (parcs, abords d'écoles) : balisage et horaires adaptés.</li>
+      <li><strong>Le bruit et les déchets</strong>, que la Ville a choisi de noter à part : d'où notre part élevée de matériel sur batterie et un circuit des déchets verts tracé.</li>
+    </ul>
+    <p>Les surfaces et fréquences reprises dans ce mémoire sont celles du <mark>[À COMPLÉTER : article du CCTP et quantités du détail estimatif]</mark>.</p>
+    <p class="ref">Ce qui manque reste surligné en jaune. Nous n'inventons jamais un chiffre : vous le complétez, ou nous le cherchons dans le dossier.</p>
+
+    <h3>2. Moyens humains affectés au marché</h3>
+    <p>Une équipe dédiée de 4 personnes, encadrée par un chef d'équipe qui sera votre interlocuteur unique pendant toute la durée du marché.</p>
+    <div class="scroll"><table>
+      <tr><th>Fonction</th><th>Qualification</th><th>Ancienneté</th><th>Rôle sur le marché</th></tr>
+      <tr><td>Chef d'équipe, interlocuteur unique</td><td>BP Aménagements paysagers, Certiphyto, SST</td><td>12 ans</td><td>Planning, contrôle qualité, comptes rendus, point mensuel avec la Ville</td></tr>
+      <tr><td>Ouvrier paysagiste qualifié</td><td>CAPA Jardinier paysagiste, CACES R482</td><td>7 ans</td><td>Tontes, tailles, conduite des engins</td></tr>
+      <tr><td>Ouvrier paysagiste</td><td>CAPA Jardinier paysagiste</td><td>3 ans</td><td>Tontes, désherbage, ramassage des feuilles</td></tr>
+      <tr><td>Agent d'entretien</td><td>Formation interne, SST</td><td>2 ans</td><td>Propreté, désherbage manuel, renfort saisonnier</td></tr>
+    </table></div>
+    <p><strong>Continuité de service.</strong> Les congés sont posés hors pic de tonte (avril à juin). En cas d'absence, un agent d'une autre équipe connaissant le secteur est affecté sous 24 h. Après un orage ou une tempête, une équipe d'astreinte intervient sous 4 h pour sécuriser les espaces.</p>
+    <p><strong>Sécurité et public.</strong> EPI complets, balisage de chaque zone d'intervention, travail aux abords des écoles en dehors des heures d'entrée et de sortie.</p>
+
+    <h3>3. Moyens matériels affectés au marché</h3>
+    <div class="scroll"><table>
+      <tr><th>Matériel</th><th>Nombre</th><th>Énergie</th><th>Usage sur le marché</th></tr>
+      <tr><td>Tondeuse autoportée à coupe frontale</td><td>1</td><td>Thermique (carburant HVO)</td><td>Grandes pelouses</td></tr>
+      <tr><td>Tondeuses à conducteur marchant, mulching</td><td>2</td><td>Batterie</td><td>Petites surfaces, abords d'écoles</td></tr>
+      <tr><td>Taille-haies</td><td>3</td><td>Batterie</td><td>Haies et arbustes</td></tr>
+      <tr><td>Débroussailleuses</td><td>3</td><td>2 batterie, 1 thermique</td><td>Bordures, talus</td></tr>
+      <tr><td>Souffleurs</td><td>2</td><td>Batterie</td><td>Feuilles, propreté</td></tr>
+      <tr><td>Désherbeur à eau chaude</td><td>1</td><td>Thermique</td><td>Allées et pieds de murs, sans produit</td></tr>
+      <tr><td>Fourgon benne + remorque</td><td>1 + 1</td><td>Diesel</td><td>Transport de l'équipe et des déchets verts</td></tr>
+    </table></div>
+    <p>Soit <strong>9 outils sur 12 (75 %) fonctionnant sur batterie</strong>, hors véhicules. En cas de panne, le matériel de remplacement est disponible au dépôt sous 24 h.</p>
+
+    <h3>Calendrier annuel des interventions</h3>
+    <div class="scroll"><table class="cal">
+      <tr><th>Prestation</th><th>J</th><th>F</th><th>M</th><th>A</th><th>M</th><th>J</th><th>J</th><th>A</th><th>S</th><th>O</th><th>N</th><th>D</th></tr>
+      <tr><td>Tontes</td><td></td><td></td><td class="x">•</td><td class="x">•</td><td class="x">•</td><td class="x">•</td><td class="x">•</td><td class="x">•</td><td class="x">•</td><td class="x">•</td><td></td><td></td></tr>
+      <tr><td>Taille des haies</td><td></td><td class="x">•</td><td></td><td></td><td></td><td></td><td></td><td class="x">•</td><td class="x">•</td><td class="x">•</td><td></td><td></td></tr>
+      <tr><td>Désherbage sans produit</td><td></td><td></td><td></td><td class="x">•</td><td class="x">•</td><td class="x">•</td><td class="x">•</td><td class="x">•</td><td class="x">•</td><td></td><td></td><td></td></tr>
+      <tr><td>Ramassage des feuilles</td><td class="x">•</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td class="x">•</td><td class="x">•</td><td class="x">•</td></tr>
+      <tr><td>Taille des arbustes</td><td class="x">•</td><td class="x">•</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td class="x">•</td><td class="x">•</td></tr>
+    </table></div>
+    <p class="ref">Les tailles de haies évitent la période de nidification (mi-mars à fin juillet). Les fréquences exactes seront alignées sur le CCTP.</p>
+
+    <h3>4. Mesures pour limiter l'impact environnemental du chantier</h3>
+    <ul>
+      <li><strong>Nuisances sonores</strong> : 75 % du matériel sur batterie, utilisé en priorité près des écoles et des habitations. Pas de matériel thermique avant 8 h.</li>
+      <li><strong>Produits employés</strong> : zéro produit phytosanitaire, conformément à la loi Labbé. Désherbage manuel, mécanique ou à l'eau chaude, paillage des massifs.</li>
+      <li><strong>Carburant</strong> : carburant HVO pour l'autoportée, tournées regroupées par quartier pour limiter les trajets.</li>
+      <li><strong>Matériel</strong> : chaque outil thermique remplacé le sera par un modèle sur batterie quand il existe.</li>
+    </ul>
+
+    <h3>5. Schéma de suivi et d'évacuation des déchets, par poste</h3>
+    <div class="flow">
+      <div><b>Tontes</b>Mulching : l'herbe reste sur place comme engrais. 0 transport.</div>
+      <div><b>Tailles</b>Broyées et réutilisées en paillage dans les massifs du secteur.</div>
+      <div><b>Feuilles</b>Collectées, transportées en benne vers la plateforme de compostage.</div>
+      <div><b>Déchets non verts</b>Triés dans des sacs séparés, déposés en déchetterie.</div>
+      <div><b>Suivi</b>Bon de dépôt à chaque passage, bilan des tonnages envoyé à la Ville chaque trimestre.</div>
+    </div>
+    <p>Plateforme de compostage retenue : <mark>[À COMPLÉTER : nom et adresse de la plateforme utilisée]</mark>.</p>
+
+    <h3>Auto-contrôle avant envoi</h3>
+    <ul class="check">
+      <li class="ok">Chaque sous-critère du règlement a son titre, dans le même ordre, avec les mêmes mots</li>
+      <li class="ok">Aucun prix dans le mémoire, pour ne pas contredire le bordereau</li>
+      <li class="ok">Le nom de l'acheteur et du lot est juste partout</li>
+      <li class="ok">Les trous restants sont surlignés et listés dans l'e-mail de livraison</li>
+      <li class="ok">Note probable : 4/5 sur les moyens, 4/5 sur l'environnement. Pour gagner un point : joindre trois photos de chantiers récents en annexe.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ÉTAPE 3 : PIÈCES -->
+<section>
+  <div class="step">Document 3 · livré avec le mémoire</div>
+  <h2>La liste des pièces à déposer</h2>
+  <p class="muted">Une offre incomplète est écartée sans être lue. C'est la première cause d'échec des petites entreprises. Nous vous disons qui prépare quoi.</p>
+  <div class="doc">
+    <h3 style="margin-top:0">Candidature</h3>
+    <ul class="check">
+      <li class="ok">DC1, lettre de candidature (pré-remplie par Bouture, lot 1 coché)</li>
+      <li class="ok">DC2, capacités de l'entreprise (pré-rempli depuis votre fiche)</li>
+      <li>Attestation d'assurance responsabilité civile en cours de validité (vous)</li>
+      <li>Extrait Kbis ou avis SIRENE de moins de 3 mois (vous, gratuit en ligne)</li>
+    </ul>
+    <h3>Offre</h3>
+    <ul class="check">
+      <li class="ok">Mémoire technique (Bouture)</li>
+      <li>Bordereau des prix unitaires et détail estimatif : <strong>toutes les lignes remplies</strong> (vous)</li>
+      <li>Acte d'engagement, si demandé au dépôt (Bouture prépare, vous signez)</li>
+      <li>Certificat de visite, si la visite est obligatoire (vous)</li>
+    </ul>
+    <h3>Si vous gagnez (à fournir sous quelques jours)</h3>
+    <ul class="check">
+      <li>Attestation de vigilance URSSAF de moins de 6 mois</li>
+      <li>Attestation de régularité fiscale</li>
+    </ul>
+    <p class="ref">Conseil donné au client : déposer la veille de la date limite. L'heure qui compte est la fin du téléversement, pas son début.</p>
+  </div>
+</section>
+
+<section>
+  <h2>Ce qui reste à faire de votre côté</h2>
+  <div class="grid">
+    <div class="card"><h3>Relire</h3><p>Corriger ce qui ne vous ressemble pas et compléter les passages en jaune. Comptez 30 minutes à 1 heure.</p></div>
+    <div class="card"><h3>Chiffrer</h3><p>Remplir le bordereau de prix. Vos prix restent votre décision.</p></div>
+    <div class="card"><h3>Déposer</h3><p>Téléverser les pièces sur la plateforme de l'acheteur. Nous vous expliquons comment, étape par étape.</p></div>
+  </div>
+</section>
+
+<section class="cta">
+  <h2>Un marché vous intéresse ?</h2>
+  <p class="lead" style="margin:0 auto 24px">Envoyez-nous le lien de l'avis. Vous recevez l'analyse gratuite, puis le mémoire sous 48 h si vous décidez d'y aller.</p>
+  <div class="row">
+    <a class="btn" href="https://buy.stripe.com/4gMfZjeCM6N1bjb5M82VG02">Commander un dossier (390 €)</a>
+    <a class="btn ghost" href="mailto:contact@boutureao.fr?subject=Analyse%20gratuite%20d%27un%20march%C3%A9">Demander une analyse gratuite</a>
+  </div>
+  <p class="muted" style="font-size:14px">Premier dossier : code <strong>PREMIERDOSSIER</strong> (-50 %). TVA non applicable, art. 293 B du CGI.</p>
+</section>
+
+<footer>Bouture, un service d'aide aux réponses aux marchés publics. · <a href="index.html" style="color:inherit">Accueil</a> · <a href="mentions-legales.html" style="color:inherit">Mentions légales et confidentialité</a> · <a href="mailto:contact@boutureao.fr" style="color:inherit">contact@boutureao.fr</a></footer>
+</div>
+</body>
+</html>
